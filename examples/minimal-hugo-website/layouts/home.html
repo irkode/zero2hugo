@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <title>Zero 2 Hugo</title>
+   </head>
+   <body>
+      {{ .Content }}
+      <!-- This is not part of the minimal markup. It's just there to get markdown source rendered as highlighted code to the page -->
+      {{ highlight .RawContent "markdown" }}
+   </body>
+</html>

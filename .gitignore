@@ -1,0 +1,5 @@
+# default destination folder
+/public
+
+# hugo internals
+.hugo_build.lock
