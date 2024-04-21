@@ -1,0 +1,26 @@
+{
+   "plugins": ["prettier-plugin-go-template"],
+   "printWidth": 100,
+   "overrides": [
+      {
+         "files": ".prettierrc",
+         "options": {
+            "parser": "json",
+            "semi": true
+         }
+      },
+      {
+         "files": "*.html",
+         "options": {
+            "parser": "go-template"
+         }
+      },
+      {
+         "files": "*.md",
+         "options": {
+            "parser": "markdown",
+            "proseWrap": "always"
+         }
+      }
+   ]
+}
