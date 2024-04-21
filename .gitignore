@@ -1,5 +1,9 @@
 # default destination folder
-/public
+**/public/**
+/resources
 
 # hugo internals
 .hugo_build.lock
+
+# development stuff
+/node_modules
