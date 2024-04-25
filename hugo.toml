@@ -28,5 +28,5 @@ disableKinds = ['rss', 'sitemap', 'taxonomy', 'term']
 
    # use repository README.md as home page content
    [[module.mounts]]
-      source = "/README.md"
+      source = "README.md"
       target = "content/_index.md"
