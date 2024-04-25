@@ -1,1 +1,32 @@
+baseURL = "https://irkode.github.io/"
+defaultContentLanguage = "en"
+title = "Zero 2 Hugo - A Website Primar"
+
 disableKinds = ['rss', 'sitemap', 'taxonomy', 'term']
+
+[permalinks]
+   [permalinks.page]
+      '/examples' = '/:section/:slug'
+      '/primer' = '/:section/:slug'
+      '/tooling' = '/:section/:slug'
+[params]
+   mainsite = true
+
+[module]
+   # default mounts (neccessary as we mount around with these. see [Module configuration: mounts](https://gohugo.io/hugo-modules/configuration/#module-configuration-mounts)
+   [[module.mounts]]
+      source = "assets"
+      target = "assets"
+   [[module.mounts]]
+      source = "content"
+      target = "content"
+
+   [[module.mounts]]
+      source = "assets/examples"
+      target = "content/examples"
+      includeFiles = "/**/index.md"
+
+   # use repository README.md as home page content
+   [[module.mounts]]
+      source = "/README.md"
+      target = "content/_index.md"

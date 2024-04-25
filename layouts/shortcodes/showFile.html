@@ -1,0 +1,16 @@
+{{- with $path := $.Get 0 -}}
+  {{- if default false site.Params.mainsite -}}
+    {{ $path = replace $.Page.Path "/content" (printf "/%s" $path) }}
+  {{- end -}}
+  {{- with $format := $.Get 1 -}}
+    {{- with resources.Get $path -}}
+      {{- highlight .Content $format -}}
+    {{- else -}}
+      {{- warnf (printf "include failed[readFile failed]: %s") $path -}}
+    {{- end -}}
+  {{- else -}}
+    {{- warnf (printf "include failed[format missing]: %s") $path -}}
+  {{- end -}}
+{{- else -}}
+  {{- warnf (printf "include failed[path]: %s") . -}}
+{{- end -}}

@@ -1,0 +1,11 @@
+<!---->
+{{- with .Section -}}
+  {{- $path := printf "%s/README.md" . -}}
+  {{ with $page := site.GetPage $path -}}
+    {{- $page.Content -}}
+  {{- else -}}
+    {{- warnf (printf "include failed[missing file]: %s" $path) -}}
+  {{- end -}}
+{{- else -}}
+  {{- errorf (printf "this is not a section: %s" .) -}}
+{{- end -}}
