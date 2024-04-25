@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>_default/section | {{- .Title -}}</title>
+  </head>
+  <body>
+    {{- partial "readme.html" . -}}
+    <h1>Content</h1>
+    {{- range .Pages -}}
+      <ul>
+        {{- if .IsPage -}}
+          <li>
+            <h2><a href="{{- .RelPermalink -}}">{{- .LinkTitle -}}</a></h2>
+            <p>{{ partial "_json.html" . }}</p>
+          </li>
+        {{- else -}}
+          <h1>SECTION</h1>
+          {{- partial "_json.html" . -}}
+        {{- end -}}
+      </ul>
+    {{- end -}}
+  </body>
+</html>
