@@ -1,24 +1,22 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>_default/section | {{- .Title -}}</title>
-  </head>
-  <body>
-    {{- partial "readme.html" . -}}
-    <h1>Content</h1>
-    {{- range .Pages -}}
-      <ul>
-        {{- if .IsPage -}}
-          <li>
-            <h2><a href="{{- .RelPermalink -}}">{{- .LinkTitle -}}</a></h2>
-            <p>{{ partial "_json.html" . }}</p>
-          </li>
-        {{- else -}}
-          <h1>SECTION</h1>
-          {{- partial "_json.html" . -}}
-        {{- end -}}
-      </ul>
-    {{- end -}}
-  </body>
-</html>
+{{- define "head-title" -}}
+   <title>
+      {{- printf "%s | %s" (title .Section) site.Params.TitleShort -}}
+   </title>
+{{- end -}}
+{{ define "content" }}
+   {{- .Content -}}
+   <ul>
+      {{- range .Pages -}}
+         {{- if .IsPage -}}
+            <li>
+               <h4><a href="{{- .RelPermalink -}}">{{- .LinkTitle -}}</a></h4>
+               <div class="irk-summary">
+                  {{- .Summary | replaceRE `<h1.*?</h1>` "" | safeHTML -}}
+               </div>
+            </li>
+         {{- else -}}
+            errorf printf "TPL: tooling/section ] called for a non Page: [ %s ]" .Path
+         {{- end -}}
+      {{- end -}}
+   </ul>
+{{ end }}

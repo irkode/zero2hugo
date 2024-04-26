@@ -1,3 +1,6 @@
+---
+---
+
 # Zero 2 Hugo - A Website Primer
 
 _Zero 2 Hugo_ is an evolving Primer for creating a website from scratch using Hugo.
@@ -55,22 +58,20 @@ If we did not scare you away, stay curious and
 
 ## Read the story
 
--  [From Zero 2 Hugo- Website](https://irkode.github.io/zero2hugo/)
-<!-- -->
--  [From Zero 2 Hugo- Primer](https://irkode.github.io/zero2hugo/primer)
-<!-- -->
--  [From Zero 2 Hugo - Example Sites](https://irkode.github.io/zero2hugo/examples)
+-  [From Zero 2 Hugo - Primer](primer)
+<!---->
+-  [From Zero 2 Hugo - Example Sites](examples)
 
    Our ready to run example websites discussed in the Primer
 
--  [From Zero 2 Hugo- Tooling](https://irkode.github.io/zero2hugo/tooling)
+-  [From Zero 2 Hugo - Tooling](tooling)
 
    A list of tools we use incl. Brief setup and usage instructions. Maybe something valuable there.
 
 ### or browse the sources
 
--  [From Zero 2 Hugo - Repository](/)
-<!-- -->
--  [From Zero 2 Hugo - Content](/content/)
+-  [From Zero 2 Hugo - Repository](https://github.com/irkode/zero2hugo)
+<!---->
+-  [From Zero 2 Hugo - Content](https://github.com/irkode/zero2hugo/tree/main/content/)
 
--  [From Zero 2 Hugo - Examples](/examples/)
+-  [From Zero 2 Hugo - Examples](https://github.com/irkode/zero2hugo/tree/main/examples/)

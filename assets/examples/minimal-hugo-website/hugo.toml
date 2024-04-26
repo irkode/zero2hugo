@@ -1,2 +1,0 @@
-# suppress default creation of additional currently unused content
-disableKinds = ['rss', 'sitemap', 'taxonomy', 'term']

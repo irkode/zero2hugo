@@ -1,7 +1,16 @@
 {
    "plugins": ["prettier-plugin-go-template"],
+   "endOfLine": "lf",
    "printWidth": 100,
+   "tabWidth": 3,
    "overrides": [
+      {
+         "files": ".code-workspace",
+         "options": {
+            "parser": "json",
+            "semi": true
+         }
+      },
       {
          "files": ".prettierrc",
          "options": {
@@ -19,7 +28,14 @@
          "files": "*.md",
          "options": {
             "parser": "markdown",
-            "proseWrap": "always"
+            "proseWrap": "always",
+            "tabWidth": 3
+         }
+      },
+      {
+         "files": "*.yaml",
+         "options": {
+            "tabWidth": 2
          }
       }
    ]

@@ -1,32 +1,30 @@
-baseURL = "https://irkode.github.io/"
+baseURL = "https://irkode.github.io/zero2hugo/"
 defaultContentLanguage = "en"
-title = "Zero 2 Hugo - A Website Primar"
+title = "Zero 2 Hugo - A Website Primer"
 
-disableKinds = ['rss', 'sitemap', 'taxonomy', 'term']
+disableKinds = ['RSS', 'sitemap', 'taxonomy', 'term']
+
+enableGitInfo = true
 
 [permalinks]
    [permalinks.page]
       '/examples' = '/:section/:slug'
       '/primer' = '/:section/:slug'
-      '/tooling' = '/:section/:slug'
+
 [params]
-   mainsite = true
+   titleShort = "Zero 2 Hugo"
+   sitePrefix = "Z2H"
 
 [module]
    # default mounts (neccessary as we mount around with these. see [Module configuration: mounts](https://gohugo.io/hugo-modules/configuration/#module-configuration-mounts)
-   [[module.mounts]]
-      source = "assets"
-      target = "assets"
-   [[module.mounts]]
-      source = "content"
-      target = "content"
+   # [[module.mounts]]
+   #    source = "assets"
+   #    target = "assets"
+   # [[module.mounts]]
+   #    source = "content"
+   #    target = "content"
 
-   [[module.mounts]]
-      source = "assets/examples"
-      target = "content/examples"
-      includeFiles = "/**/index.md"
-
-   # use repository README.md as home page content
-   [[module.mounts]]
-      source = "README.md"
-      target = "content/_index.md"
+   # [[module.mounts]]
+   #    source = "/examples"
+   #    target = "assets/examples"
+   #    excludeFiles = ["/**/public/", "/**/resources/", "/.hugo_build.lock"]

@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      {{- block "head-title" . -}}
+         <title>{{- or .Title site.Title -}}</title>
+      {{- end -}}
+   </head>
+   <body>
+      {{ block "content" . }}
+         {{ .Content }}
+      {{ end }}
+   </body>
+</html>
