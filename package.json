@@ -1,5 +1,6 @@
 {
    "devDependencies": {
+      "cspell": "^8.8.0",
       "prettier": "^3.2.5",
       "prettier-plugin-go-template": "^0.0.15"
    }

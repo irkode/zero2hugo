@@ -1,0 +1,8 @@
+{
+   "files": ["**/*.md"],
+   "dictionaryDefinitions": [
+      { "name": "hugo", "path": "./.cspell/hugo.txt" },
+      { "name": "zero2hugo", "path": "./.cspell/zero2hugo.txt" }
+   ],
+   "dictionaries": ["hugo", "zero2hugo"]
+}

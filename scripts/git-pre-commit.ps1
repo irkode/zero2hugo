@@ -1,7 +1,40 @@
 $Files = git diff --cached --name-only --diff-filter=ACMR
 if (-Not $Files.Count) { exit 0 }
 
+$MarkdownFiles = $Files | Where-Object { $_ -like '*.md' } 
+
+"Files: " | Out-Host
+$Files | Out-Host
+"MarkdownFiles: " | Out-Host
+$MarkdownFiles | Out-Host
+
+$Checks = 0
+$ChecksFailed = 0
+
+$Checks += 1
 & npx prettier --ignore-unknown --check $Files
-$Retval = $LastExitCode
-if ($Retval) { Write-Error -ErrorAction Stop "Format Errors - Commit rejected"; exit $retval }
+If ($LastExitCode) {
+   $ChecksFailed += 1
+   Write-Error -ErrorAction Continue "Format Errors - Commit rejected";
+} else {
+   Write-Output "Formatting OK";
+}
+
+$Checks += 1
+if ($MarkdownFiles.Count) {
+   & npx cspell $MarkdownFiles
+   If ($LastExitCode) {
+      $ChecksFailed += 1
+      Write-Error -ErrorAction Continue "Format Errors - Commit rejected";
+   }
+} else {
+   Write-Output "Spelling   SKIPPED - no Markdown Files changed";
+}
+
+if ($ChecksFailed) { 
+   Write-Error -ErrorAction Stop "FAILURE: $ChecksFailed of $Checks failed - Commit rejected"
+   exit 1
+} else {
+   Write-Output "SUCCESS: All $checks Checks successfull"
+}
 exit 0
