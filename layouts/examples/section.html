@@ -1,0 +1,39 @@
+{{- define "head-title" -}}
+   <title>
+      {{- printf "%s | %s" (title .Section) site.Params.TitleShort -}}
+   </title>
+{{- end -}}
+{{ define "content" }}
+   {{- .Content -}}
+   <ul>
+      {{ with site.GetPage "/primer" }}
+         {{- range .Pages -}}
+            {{- if .IsPage -}}
+               <li>
+                  <h4>
+                     Example:&nbsp;<a
+                        href="{{- printf "%s%s" "https://github.com/irkode/zero2hugo/tree/main" (replace .Path "/primer/" "/examples/") -}}"
+                     >
+                        {{- with (and .Fragments .Fragments.Headings (index .Fragments.Headings 0)) -}}
+                           {{- .Title -}}
+                        {{- end -}}</a
+                     >
+                  </h4>
+                  <h5>
+                     Read the Primer:&nbsp;<a href="{{- .RelPermalink -}}">
+                        {{- with (and .Fragments .Fragments.Headings (index .Fragments.Headings 0)) -}}
+                           {{- .Title -}}
+                        {{- end -}}</a
+                     >
+                  </h5>
+                  <div class="irk-summary">
+                     {{- .Summary | replaceRE `<h1.*?</h1>` "" | safeHTML -}}
+                  </div>
+               </li>
+            {{- else -}}
+               errorf printf "TPL: tooling/section ] called for a non Page: [ %s ]" .Path
+            {{- end -}}
+         {{- end -}}
+      {{- end -}}
+   </ul>
+{{ end }}
