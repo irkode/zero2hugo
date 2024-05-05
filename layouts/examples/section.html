@@ -5,6 +5,7 @@
 {{- end -}}
 {{ define "content" }}
    {{- .Content -}}
+   {{- partial "_json.html" .RegularPagesRecursive -}}
    <ul>
       {{ with site.GetPage "/primer" }}
          {{- range .Pages -}}

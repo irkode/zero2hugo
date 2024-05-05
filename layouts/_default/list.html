@@ -1,8 +1,28 @@
-<!doctype html>
-<html lang="en">
-   <head>
-      <meta charset="utf-8" />
-      <title>_default/list</title>
-   </head>
-   <body></body>
-</html>
+{{- define "head-title" -}}
+   <title>
+      {{- printf "%s | %s" (title .Section) site.Params.TitleShort -}}
+   </title>
+{{- end -}}
+{{ define "content" }}
+   {{- .Content -}}
+   <ul>
+      {{- range .Pages -}}
+         {{- if .IsPage -}}
+            <li>
+               <h4>
+                  <a href="{{- .RelPermalink -}}"
+                     >{{- with (and .Fragments .Fragments.Headings (index .Fragments.Headings 0)) -}}
+                        {{- .Title -}}
+                     {{- end -}}</a
+                  >
+               </h4>
+               <div class="irk-summary">
+                  {{- .Summary | replaceRE `<h1.*?</h1>` "" | safeHTML -}}
+               </div>
+            </li>
+         {{- else -}}
+            errorf printf "TPL: tooling/section ] called for a non Page: [ %s ]" .Path
+         {{- end -}}
+      {{- end -}}
+   </ul>
+{{ end }}

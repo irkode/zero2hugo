@@ -5,7 +5,11 @@
 {{- end -}}
 {{ define "content" }}
    <h6>
-      Example:&nbsp;<a
+      View It:&nbsp;<a href="{{- replace .Permalink "/primer/" "/examples/" -}}">
+         {{- with (and .Fragments .Fragments.Headings (index .Fragments.Headings 0)) -}}
+            {{- .Title -}}
+         {{- end -}}</a
+      ><br />Sources:&nbsp;<a
          href="{{- printf "%s%s" "https://github.com/irkode/zero2hugo/tree/main" (replace .Path "/primer/" "/examples/") -}}"
       >
          {{- with (and .Fragments .Fragments.Headings (index .Fragments.Headings 0)) -}}
