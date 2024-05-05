@@ -5,6 +5,11 @@
       {{- block "head-title" . -}}
          <title>{{- or .Title site.Title -}}</title>
       {{- end -}}
+      <style>
+         :root {
+            background: lightgray;
+         }
+      </style>
    </head>
    <body>
       {{ block "content" . }}
