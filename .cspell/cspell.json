@@ -1,8 +1,0 @@
-{
-   "files": ["**/*.md"],
-   "dictionaryDefinitions": [
-      { "name": "hugo", "path": "./hugo.txt" },
-      { "name": "zero2hugo", "path": "./zero2hugo.txt" }
-   ],
-   "dictionaries": ["hugo", "zero2hugo"]
-}
