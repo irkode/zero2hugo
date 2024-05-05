@@ -1,5 +1,5 @@
 ---
-title: "Muffet -  Fast Website Link Checker in Go"
+title: "Muffet - Fast Website Link Checker in Go"
 params:
    name:
    dependencies: []
@@ -10,7 +10,7 @@ params:
 
 # Muffet - Fast Website Link Checker in Go
 
-**Our choice to detect broken links**
+**Test for broken links on the generated website.**
 
 > Muffet is a website link checker which scrapes and inspects all pages in a website recursively.
 

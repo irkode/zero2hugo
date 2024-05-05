@@ -9,7 +9,13 @@
       {{- range .Pages -}}
          {{- if .IsPage -}}
             <li>
-               <h4><a href="{{- .RelPermalink -}}">{{- .LinkTitle -}}</a></h4>
+               <h4>
+                  <a href="{{- .RelPermalink -}}"
+                     >{{- with (and .Fragments .Fragments.Headings (index .Fragments.Headings 0)) -}}
+                        {{- .Title -}}
+                     {{- end -}}</a
+                  >
+               </h4>
                <div class="irk-summary">
                   {{- .Summary | replaceRE `<h1.*?</h1>` "" | safeHTML -}}
                </div>

@@ -2,14 +2,14 @@
 title: "Hugo - Static Site Generator"
 params:
    dependencies: []
-   type: maintool
+   type: hugo
    homepage: https://gohugo.io
    download: https://github.com/gohugoio/hugo/releases
 ---
 
 # Hugo - The world’s fastest framework for building websites
 
-**Our Choice as Static Site Generator for building our website.**
+**The Static Site Generator for building our website.**
 
 > Hugo is one of the most popular open-source static site generators. With its amazing speed and
 > flexibility, Hugo makes building websites fun again.
@@ -30,4 +30,4 @@ hugo server
 
 ## Configuration
 
-The executable itself needs no configuration. But we will have too configer a lot for our website
+The executable itself needs no configuration. But we will have too configure a lot for our website

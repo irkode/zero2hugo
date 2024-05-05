@@ -5,10 +5,9 @@ params:
    type: dependency
    homepage: "https://go.dev"
    download: https://go.dev/dl/
-# cspell:ignore GOVERSION
 ---
 
-# Go Programming Language
+# The Go Programming Language
 
 **Dependency of Hugo's advanced features, especially mounts.**
 

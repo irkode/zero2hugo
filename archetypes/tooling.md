@@ -8,7 +8,7 @@ params:
       - homepage: ""
       - download: ""
    plugins:
-      pluga:
+      plugins:
          - homepage: ""
          - download: ""
 ---

@@ -1,24 +1,28 @@
 ---
 title: "Prettier - An Opinionated Code Formatter"
 params:
-   dependencies: ["nodejs"]
+   dependencies: ["node.js"]
    type: utility
    homepage: "https://prettier.io/"
 plugins:
-   - prettier-plugin-go-template: https://github.com/NiklasPor/prettier-plugin-go-template#readme
+   - "prettier-plugin-go-template: https://github.com/NiklasPor/prettier-plugin-go-template#readme"
 ---
 
 # Prettier - An Opinionated Code Formatter
 
-**I use Prettier with the _prettier-plugin-go-template_ which enhances prettier to deal with the go
-templates that will otherwise be corrupted at every call. Although Prettier sometimes have different
-_opinions_ a fast and reliable \_auto_formatting is worth to change some habits.**
+**Automatic code formatting from editor and command line.**
 
 > -  Supports many languages
 > -  Integrates with most editors
 > -  Has few options
 
 <!--more-->
+
+Sometimes Prettier has a different _opinions_ about code should be formatted than we do, But a
+fast,consistent and reliable formatting is worth it.
+
+We use Prettier with the _prettier-plugin-go-template_ which handles the go templates that will
+otherwise be corrupted.
 
 ## Install
 
@@ -27,9 +31,7 @@ Prettier is a npm application so just use `npm` to install to your current works
 Easiest is to install both Prettier and the Go-Templates plugin to your current workplace[^global]
 using npm.
 
-[^global]:
-
-hi
+[^global]: could't make it with a _--global_ install
 
 ```powershell
 npm install --save-dev prettier prettier-plugin-go-template

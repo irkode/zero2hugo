@@ -1,0 +1,6 @@
+~goversion
+cachebusters
+errorf
+gohugoio
+linenos
+warnf

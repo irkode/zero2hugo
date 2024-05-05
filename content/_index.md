@@ -8,14 +8,12 @@ _Zero 2 Hugo_ is an evolving Primer for creating a website from scratch using Hu
 We develop a website starting with a bare metal one and finally reach a featured website with a nice
 look and feel.
 
-### It's not a Quickstart
+## It's not a Quick Start Guide
 
 If you came here to find a quick guide to set up a static website with a nice theme and simple
-setup - this is not where you are. We recommend one of the tutorials around maybe one alreday
+setup - this is not where you are. We recommend one of the tutorials around maybe one already
 utilizing a Theme for layout and styling. An fast and easy go would be
 [Hugo - Getting Started](https://gohugo.io/getting-started/).
-
-### It's not an easy Hugo guide
 
 Zero2Hugo is **not** an introduction SSG, Web technologies (Html, css, scss...), front matter,
 Markdown, template systems, Git, GitHub, GitHubPages, ... (yeah, buzzword bingo).
@@ -26,7 +24,10 @@ For _Hugo_ we provide a little more background information. Where appropriate we
 official [Hugo Documentation](https://gohugo.io/documentation/). Be prepared to read a lot of these
 pages for deeper understanding.
 
-We expect you to be familiar with
+## Prerequisites
+
+The Primer is designed so you can follow it by just using the site's navigation. To try things out
+yourself you will definitely need to be familiar with:
 
 -  Your operating systems command line interface
 -  Git
@@ -66,7 +67,7 @@ If we did not scare you away, stay curious and
 
 -  [From Zero 2 Hugo - Tooling](tooling)
 
-   A list of tools we use incl. Brief setup and usage instructions. Maybe something valuable there.
+   A list of tools we use incl. Brief setup and usage instructions. Maybe something valuable here.
 
 ### or browse the sources
 
