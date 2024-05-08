@@ -25,7 +25,7 @@ enableGitInfo = true
       source = "content"
       target = "content"
    [[module.mounts]]
-      source = "/examples"
+      source = "examples"
       target = "content/examples"
       includeFiles = ["/**/*.md"]
       #      excludeFiles = ["/**/public/", "/**/resources/", "/.hugo_build.lock"]
