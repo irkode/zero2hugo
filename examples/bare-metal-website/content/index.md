@@ -7,7 +7,7 @@ We are up and running a website from scratch using Hugo.
 Just three files needed.
 
 ```text
-/zero2hugo/minimal-site
+/bare-metal-website
 │   hugo.toml              <-- site configuration
 │
 ├───content

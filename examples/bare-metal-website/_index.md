@@ -1,6 +1,6 @@
 ---
 build:
-   list: always
+   list: local
    publishResources: false
    render: never
 ---

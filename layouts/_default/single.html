@@ -3,13 +3,6 @@
       {{- printf "%s | %s" (title .Title) site.Params.TitleShort -}}
    </title>
 {{- end -}}
-{{ define "content" }}
-   <h6>single:</h6>
-   <strong>Last Mod:</strong>&nbsp;{{- .Lastmod -}}
-   <p>
-      {{- range $key, $value := .Params -}}
-         <strong>{{- $key -}}:</strong>{{- $value -}}<br />
-      {{- end -}}
-   </p>
-   {{ .Content }}
-{{ end }}
+{{- define "content" -}}
+   {{- .Content -}}
+{{- end -}}

@@ -28,7 +28,6 @@ enableGitInfo = true
    [[module.mounts]]
       source = "examples"
       target = "content/examples"
-      #includeFiles = ["/**/*.md"]
       excludeFiles = ["/**/public/", "/**/resources/", "/.hugo_build.lock"]
 
 # was unable to turn that completely off. disliked the debug messages for missing tailwind css

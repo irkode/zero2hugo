@@ -1,1 +1,2 @@
+# could even be empty if you don't care about warnings and additional xml files
 disableKinds = ['rss', 'sitemap', 'taxonomy', 'term']

@@ -3,13 +3,46 @@
    <head>
       <meta charset="utf-8" />
       <title>Bare Metal Website</title>
-      <style>
-         :root {
-            background: lightgoldenrodyellow;
-         }
-      </style>
+      <!-- force render early -->
+      {{- $pageContent := .Content -}}
    </head>
    <body>
-      {{- .Content -}}
+      <div content style="background: lightgoldenrodyellow">
+         {{- $pageContent -}}
+      </div>
+      <div style="background-color: lightgray">
+         <hr />
+         <h2>Relevant Files</h2>
+         <!-- doesn't work the other way round -->
+         {{- $all := .Parent.RegularPages -}}
+         {{- $all := $all | append .Parent.Resources -}}
+         {{- $path := "" -}}
+         {{- $content := "" -}}
+         {{- range $all -}}
+            {{- if eq .ResourceType "page" -}}
+               {{- $path = .File.Path -}}
+               {{- $content = .RawContent -}}
+            {{- else -}}
+               {{- $path = .Name -}}
+               {{- $content = .Content -}}
+            {{- end -}}
+            {{- $path = strings.Replace (strings.Replace $path "examples\\bare-metal-website\\" "") "\\" "/" -}}
+            <h5>{{- $path -}}</h5>
+            {{- $format := "text" -}}
+            {{- range slice ".md" ".html" ".toml" -}}
+               {{- if strings.HasSuffix $path ".md" -}}
+                  {{- $format = "markdown" -}}{{- break -}}
+               {{- end -}}
+               {{- if strings.HasSuffix $path ".html" -}}
+                  {{- $format = "html" -}}{{- break -}}
+               {{- end -}}
+               {{- if strings.HasSuffix $path ".toml" -}}
+                  {{- $format = "toml" -}}{{- break -}}
+               {{- end -}}
+            {{- end -}}
+            {{- $format -}}
+            {{- highlight $content $format -}}
+         {{- end -}}
+      </div>
    </body>
 </html>
