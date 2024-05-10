@@ -1,3 +1,8 @@
+{{- define "tests" -}}
+   {{- if eq hugo.Version site.Params.HugoVersion -}}
+      {{- warnidf "TEST_VERSION" "This has been developed using Hugo %s\n\tYou are running Hugo version %s" site.Params.HugoVersion hugo.Version -}}
+   {{- end -}}
+{{- end -}}
 {{- define "content" -}}
    {{- .Content -}}
 {{- end -}}

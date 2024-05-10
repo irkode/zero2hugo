@@ -63,9 +63,10 @@ If we did not scare you away, stay curious and
 
    Our ready to run example websites discussed in the Primer
 
--  [From Zero 2 Hugo- Tooling](https://irkode.github.io/zero2hugo/tooling)
+-  [From Zero 2 Hugo- Tools](https://irkode.github.io/zero2hugo/tools)
 
-   A list of tools we use incl. Brief setup and usage instructions. Maybe something valuable there.
+   A list of tools we use incl. brief setup and usage instructions. Maybe something valuable for you
+   here.
 
 ### or browse the sources
 

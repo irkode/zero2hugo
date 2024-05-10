@@ -13,6 +13,7 @@ enableGitInfo = true
 [params]
    titleShort = "Zero 2 Hugo"
    sitePrefix = "Z2H"
+   hugoVersion = "0.125.6"
 
 [module]
    # workaround for -cleanDestinationDir without having need for a static folder: https://github.com/gohugoio/hugo/issues/8433
@@ -27,8 +28,8 @@ enableGitInfo = true
    [[module.mounts]]
       source = "examples"
       target = "content/examples"
-      includeFiles = ["/**/*.md"]
-      #      excludeFiles = ["/**/public/", "/**/resources/", "/.hugo_build.lock"]
+      #includeFiles = ["/**/*.md"]
+      excludeFiles = ["/**/public/", "/**/resources/", "/.hugo_build.lock"]
 
 # was unable to turn that completely off. disliked the debug messages for missing tailwind css
 [build]

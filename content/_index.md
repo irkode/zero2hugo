@@ -65,7 +65,7 @@ If we did not scare you away, stay curious and
 
    Our ready to run example websites discussed in the Primer
 
--  [From Zero 2 Hugo - Tooling](tooling)
+-  [From Zero 2 Hugo - Tools](tools)
 
    A list of tools we use incl. Brief setup and usage instructions. Maybe something valuable here.
 
