@@ -9,3 +9,4 @@
 
 # development stuff
 /node_modules
+/public_local
