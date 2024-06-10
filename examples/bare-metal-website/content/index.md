@@ -1,3 +1,6 @@
+---
+---
+
 # Bare Metal Website
 
 We are up and running a website from scratch using Hugo.
@@ -6,13 +9,6 @@ We are up and running a website from scratch using Hugo.
 
 Just three files needed.
 
-```text
-/bare-metal-website
-│   hugo.toml              <-- site configuration
-│
-├───content
-│       index.md           <-- homepage
-│
-└───layouts
-        home.html          <-- homepage layout
-```
+-  hugo configuration file: `/hugo.toml`
+-  layout file: `/layouts/home.html`
+-  some content for the page: `/content/index.html`

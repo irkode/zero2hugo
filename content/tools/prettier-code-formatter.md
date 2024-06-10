@@ -4,8 +4,9 @@ params:
    dependencies: ["node.js"]
    type: utility
    homepage: "https://prettier.io/"
-plugins:
-   - "prettier-plugin-go-template: https://github.com/NiklasPor/prettier-plugin-go-template#readme"
+   plugins:
+      - "prettier-plugin-go-template:
+        https://github.com/NiklasPor/prettier-plugin-go-template#readme"
 ---
 
 # Prettier - An Opinionated Code Formatter
