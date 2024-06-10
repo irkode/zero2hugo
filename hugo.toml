@@ -1,6 +1,6 @@
-baseURL = "https://irkode.github.io/zero2hugo/"
+baseURL                = "https://irkode.github.io/zero2hugo/"
 defaultContentLanguage = "en"
-title = "Zero 2 Hugo - A Website Primer"
+title                  = "Zero 2 Hugo - A Website Primer"
 
 disableKinds = ['RSS', 'sitemap', 'taxonomy', 'term']
 
@@ -11,26 +11,23 @@ enableGitInfo = true
       '/examples' = '/:sections/:slug'
 
 [params]
-   titleShort = "Zero 2 Hugo"
-   sitePrefix = "Z2H"
-   hugoVersion = "0.125.6"
+   debugTemplate = true
 
 [module]
    # workaround for -cleanDestinationDir without having need for a static folder: https://github.com/gohugoio/hugo/issues/8433
    [[module.mounts]]
-      target = 'static'
-      source = 'static'
+      target       = 'static'
+      source       = 'static'
       excludeFiles = [".keep"]
 
    [[module.mounts]]
       source = "content"
       target = "content"
    [[module.mounts]]
-      source = "examples"
-      target = "content/examples"
-      excludeFiles = ["/**/public/", "/**/resources/", "/.hugo_build.lock"]
-
-# was unable to turn that completely off. disliked the debug messages for missing tailwind css
+      source       = "examples"
+      target       = "content/examples"
+      includeFiles = ["**/*.md", "/layouts/*"]
+      excludeFiles = ["resources/**", "public/**", ".hugo_build.lock"]
 [build]
    [build.buildStats]
       enable = false

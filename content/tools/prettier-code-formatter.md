@@ -29,13 +29,13 @@ otherwise be corrupted.
 
 Prettier is a npm application so just use `npm` to install to your current workspace folder.
 
-Easiest is to install both Prettier and the Go-Templates plugin to your current workplace[^global]
+Easiest is to install Prettier and the used plugins in one shot to your current workplace[^global]
 using npm.
 
 [^global]: could't make it with a _--global_ install
 
 ```powershell
-npm install --save-dev prettier prettier-plugin-go-template
+npm install --save-dev prettier prettier-plugin-go-template prettier-plugin-toml
 ```
 
 ## Usage
