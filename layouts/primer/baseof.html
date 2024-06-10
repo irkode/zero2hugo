@@ -1,17 +1,17 @@
 <!doctype html>
 {{- if partialCached "debug/curPageHasDebugTemplate" . (string .) -}}
-   {{- partialCached "debug/templates" (slice . "_default/baseof.html") (string .) "_default/baseof.html" -}}
+   {{- partialCached "debug/templates" (slice . "primer/baseof.html") (string .) "primer/baseof.html" -}}
 {{- end -}}
 {{- block "debug" . -}}{{- end -}}
+{{ partialCached "tests/version.html" . "ONCE" }}
 <html lang="en">
    <head>
       <meta charset="utf-8" />
       {{- hugo.Generator -}}
       <title>{{- or .Title site.Title -}}</title>
-      {{ partial "nav" . }}
       <style>
          :root {
-            background: lightgray;
+            background: lightsteelblue;
          }
       </style>
    </head>

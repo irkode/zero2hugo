@@ -1,8 +1,9 @@
-{{- define "head-title" -}}
-   <title>
-      {{- printf "%s | %s" (title .Section) site.Params.TitleShort -}}
-   </title>
-{{- end -}}
+{{ define "debug" }}
+   {{ if partialCached "debug/curPageHasDebugTemplate" . (string .) }}
+      {{ partialCached "debug/templates" (slice . "_default/section.html") (string .) "_default/section.html" }}
+   {{ end }}
+{{ end }}
+
 {{ define "content" }}
    {{- .Content -}}
    <ul>

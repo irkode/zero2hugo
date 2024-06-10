@@ -1,8 +1,12 @@
-{{- define "head-title" -}}
-   <title>
-      {{- printf "%s | %s" (title .Title) site.Params.TitleShort -}}
-   </title>
-{{- end -}}
+{{ define "debug" }}
+   {{ if partialCached "debug/curPageHasDebugTemplate" . (string .) }}
+      {{ warnf "STORE %s" . }}
+      {{ partialCached "debug/templates" (slice . "primer/single.html") (string .) "primer/single.html" }}
+   {{ else }}
+      {{ warnf "SKIP %s" . }}
+   {{ end }}
+{{ end }}
+
 {{ define "content" }}
    <h6>
       View It:&nbsp;<a href="{{- replace .Permalink "/primer/" "/examples/" -}}">

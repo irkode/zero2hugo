@@ -1,0 +1,4 @@
+{{- $isSetPage := isSet .Params "debugtemplate" -}}
+{{- $isDebugPage := and $isSetPage .Params.DebugTemplate -}}
+{{- $isDebugSite := and (isSet site.Params "debugtemplate") site.Params.DebugTemplate -}}
+{{- return or $isDebugPage (and (not $isSetPage) $isDebugSite) -}}

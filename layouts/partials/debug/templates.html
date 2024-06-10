@@ -1,0 +1,9 @@
+{{ $page := index . 0 }}
+{{ $pageString := string $page }}
+{{ with index . 1 }}
+   {{ if $page.Store.Get $pageString }}
+      {{ $page.Store.Add $pageString . }}
+   {{ else }}
+      {{ $page.Store.Add $pageString (slice .) }}
+   {{ end }}
+{{ end }}

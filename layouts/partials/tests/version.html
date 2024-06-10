@@ -1,0 +1,13 @@
+{{- range slice "TEST_VERSION" -}}
+   {{- with os.ReadFile ".hvm" -}}
+      {{- with strings.TrimLeft "v" . -}}
+         {{- if eq hugo.Version . -}}
+            {{- warnf "TEST_VERSION: Wunderful perfect version match - You are running Hugo version %s" hugo.Version -}}
+         {{- else -}}
+            {{- warnf "TEST_VERSION: This site has been developed using Hugo %s - You are running Hugo version %s" . hugo.Version -}}
+         {{- end -}}
+         {{- break -}}
+      {{- end -}}
+   {{- end -}}
+   {{- warnf "TEST_VERSION: Unable to determine needed Hugo version from `.hvm` - You are running Hugo version %s" hugo.Version -}}
+{{- end -}}

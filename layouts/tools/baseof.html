@@ -1,0 +1,34 @@
+<!doctype html>
+{{- if partialCached "debug/curPageHasDebugTemplate" . (string .) -}}
+   {{- partialCached "debug/templates" (slice . "tools/baseof.html") (string .) "tools/baseof.html" -}}
+{{- end -}}
+{{- block "debug" . -}}{{- end -}}
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      {{- hugo.Generator -}}
+      {{ block "head-title" . }}
+         <title>{{- or .Title site.Title -}}</title>
+      {{- end -}}
+      <style>
+         :root {
+            background: lightyellow;
+         }
+      </style>
+   </head>
+   <body>
+      {{ block "content" . }}
+         {{ .Content }}
+      {{ end }}
+   </body>
+</html>
+{{ $c := math.Counter }}
+{{ $noop := .Content }}
+{{ $page := string . }}
+{{ with .Store.Get $page }}
+   {{ $output := slice (printf "%04d %s" $c $page) }}
+   {{ range . }}
+      {{ $output = $output | append (printf "      %04d ... %T : %v" $c . .) }}
+   {{ end }}
+   {{ warnf "%s" (delimit $output "\n") }}
+{{ end }}
