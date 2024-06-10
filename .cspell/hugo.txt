@@ -1,4 +1,5 @@
 ~goversion
+baseof
 cachebusters
 errorf
 gohugoio

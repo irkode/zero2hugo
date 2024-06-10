@@ -1,0 +1,6 @@
+{{- define "main" -}}
+   <h1>{{- or .Page.Title site.Title -}}</h1>
+   {{- .Content -}}
+   <hr />
+   {{- with debug.Dump .ResourceType -}}{{- highlight . "json" -}}{{- end -}}
+{{- end -}}

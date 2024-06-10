@@ -1,0 +1,9 @@
+# deploy to root
+baseURL = "https://localhost:1313/"
+# could use "en-US" here aswell
+languageCode = "en"
+# Website title
+title = "Basic Hugo Website"
+
+# could even be empty if you don't care about warnings and additional xml files
+disableKinds = ['rss', 'sitemap', 'taxonomy', 'term']
